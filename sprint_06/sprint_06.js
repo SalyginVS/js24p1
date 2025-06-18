@@ -3,6 +3,7 @@
 
 function t01 () {
     let i1val = +(document.querySelector('.i-1').value);
+
     if (i1val > 1500) document.querySelector('.out-1').textContent = 1;
 }
 
@@ -15,8 +16,9 @@ document.querySelector('.b-1').onclick = t01;
 
 function t02 () {
     let i2val = +(document.querySelector('.i-2').value);
+
     if (i2val > 1500) document.querySelector('.out-2').textContent = 1;
-    else document.querySelector('.out-2').textContent = 0;
+    else if (i2val < 1500) document.querySelector('.out-2').textContent = 0;
 }
 
 document.querySelector('.b-2').onclick = t02;
@@ -27,6 +29,7 @@ document.querySelector('.b-2').onclick = t02;
 
 function t03 () {
     let i3val = +(document.querySelector('.i-3').value);
+
     if (i3val > 0) document.querySelector('.out-31').textContent = 1;
     if (i3val < 0) document.querySelector('.out-31').textContent = 0;
 
@@ -54,6 +57,7 @@ document.querySelector('.b-4').onclick = t04;
 
 function t05 () {
     let num = document.querySelector('.i-5').value;
+
     if (num) document.querySelector('.out-5').textContent = 1;
     else document.querySelector('.out-5').textContent = 0;
 }
@@ -65,6 +69,7 @@ document.querySelector('.b-5').onclick = t05;
 
 function t06 () {
     let i6val = document.querySelector('.i-6').value;
+
     document.querySelector('.out-6').textContent = i6val.length > 10;
 }
 
@@ -77,6 +82,7 @@ document.querySelector('.b-6').onclick = t06;
 function t07 () {
     let i71val = +(document.querySelector('.i-71').value);
     let i72val = +(document.querySelector('.i-72').value);
+
     if (i71val > i72val) document.querySelector('.out-7').textContent = i71val;
     else if (i72val > i71val) document.querySelector('.out-7').textContent = i72val;
     else document.querySelector('.out-7').textContent = i71val;
@@ -91,8 +97,9 @@ document.querySelector('.b-7').onclick = t07;
 let currentYear = (new Date()).getFullYear();
 
 function t08 () {
-    let out = document.querySelector('.out-8');
+    const out = document.querySelector('.out-8');
     let i8val = +document.querySelector('.i-8').value;
+
     if ((currentYear - i8val) > 16) out.textContent = 1;
     else if ((currentYear - i8val) < 16) out.textContent = -1;
     else out.textContent = 0;
@@ -108,8 +115,9 @@ document.querySelector('.b-8').onclick = t08;
 // все числа указаны включительно. Функция должна выводить в .out-9 номер подъезда в зависимости от введенной квартиры. Если число выходит из указанных диапазонов - то выводится 0.
 
 function t09 () {
-    let out = document.querySelector('.out-9');
+    const out = document.querySelector('.out-9');
     let i9val = +document.querySelector('.i-9').value;
+
     if (i9val >= 1 && i9val <= 36) out.textContent = 1;
     else if (i9val >= 37 && i9val <= 87) out.textContent = 2;
     else if (i9val >= 88 && i9val <= 100) out.textContent = 3;
@@ -127,11 +135,12 @@ document.querySelector('.b-9').onclick = t09;
 
 
 function t10 () {
-    let out = document.querySelector('.out-10');
+    const out = document.querySelector('.out-10');
     let r10val = +document.querySelector('.r-10').value;
-    if (r10val >= 20 && r10val <= 30) out.textContent = 'cold'
-    else if (r10val >= 31 && r10val <= 50) out.textContent = 'warm'
-    else if (r10val >= 51 && r10val <= 70) out.textContent = 'hot'
+
+    if (r10val >= 20 && r10val <= 30) out.textContent = 'cold';
+    else if (r10val >= 31 && r10val <= 50) out.textContent = 'warm';
+    else if (r10val >= 51 && r10val <= 70) out.textContent = 'hot';
 }
 
 document.querySelector('.r-10').oninput = t10;
@@ -141,7 +150,15 @@ document.querySelector('.r-10').oninput = t10;
 // Создана функция t11. Функция запускается при нажатии .b-11. Напишите код внутри функции, который читает имя пользователя из .i-111 и пароль из .i-112. Если имя пользователя пустая строка, то в .out-11 выводится строка 'username error' и проверка дальше не делается. Если длина пароля меньше 10 символов, то в .out-11 выводится 'password error'. Если ошибок нет, то в .out-11 выводится true.
 
 function t11 () {
-    
+    const out = document.querySelector('.out-11');
+    let i111val = document.querySelector('.i-111').value;
+    let i112val = document.querySelector('.i-112').value;
+
+    if (i111val === '') {
+        out.textContent = 'username error';
+        return;
+    }
+    i112val.length < 10 ? out.textContent = 'password error' : out.textContent = 'true'
 }
 
 document.querySelector('.b-11').onclick = t11;
@@ -153,8 +170,7 @@ let num_1 = 5;
 let num_2 = 9;
 
 function t12 () {
-   
-    
+    num_1 > num_2 ? document.querySelector('.out-12').textContent = num_1 : document.querySelector('.out-12').textContent = num_2;
 }
 
 document.querySelector('.b-12').onclick = t12;
@@ -166,8 +182,7 @@ document.querySelector('.b-12').onclick = t12;
 let bool = true;
 
 function t13 () {
-   
-    
+    document.querySelector('.out-13').textContent = !bool;
 }
 
 document.querySelector('.b-13').onclick = t13;
@@ -179,7 +194,7 @@ document.querySelector('.b-13').onclick = t13;
 let g14 = 2001;
 
 function t14 () {
-   
+    g14 === 2000 ? document.querySelector('.out-14').textContent = 1 : document.querySelector('.out-14').textContent = 0;
 }
 
 document.querySelector('.b-14').onclick = t14;
@@ -189,7 +204,9 @@ document.querySelector('.b-14').onclick = t14;
 // При изменении select запускается функция t15. Список select содержит названия товаров. Если value товара кодируется true, то товар продается по скидке. Напишите внутри функции код, который получает value текущего товара и если предусмотрена скидка - выводит в .out-15 строку 'sale'. Если скидка не предусмотрена - выводится пустая строка.
 
 function t15() {
+    let s15val = document.querySelector('.s-15').value;
 
+    s15val === 'true' ? document.querySelector('.out-15').textContent = 'sale' : document.querySelector('.out-15').textContent = '';
 }
 
 document.querySelector('.s-15').onchange = t15;
@@ -199,7 +216,13 @@ document.querySelector('.s-15').onchange = t15;
 // Создана функция t16. Функция запускается при вводе в input.i-16 текста. Функция должна выводить вводимый в input текст в .out-16. Если длина текста меньше 5 символов, то .out-16 должен окрашиваться (backgroundColor) в цвет 'red'. Если длина текста от 5 (включительно) до 10 (включительно), то цвет фона - 'orange'. Если длина текста больше 10 символов, то цвет фона 'green'. 
 
 function t16 () {
-   
+    const out16 = document.querySelector('.out-16');
+    let i16val = document.querySelector('.i-16').value;
+
+    out16.textContent = i16val;
+    if (i16val.length < 5) out16.style.backgroundColor = 'red';
+    else if (i16val.length >= 5 && i16val.length <= 10) out16.style.backgroundColor = 'orange';
+    else out16.style.backgroundColor = 'green';
 }
 
 document.querySelector('.i-16').oninput = t16;
@@ -214,7 +237,20 @@ document.querySelector('.i-16').oninput = t16;
 let url ='/admin';
 
 function t17 () {
-   
+    const out = document.querySelector('.out-17');
+
+    switch (url) {
+    case '/':
+        out.textContent = 'frontend';
+        break;
+
+    case '/admin':
+        out.textContent = 'backend';
+        break;
+
+    default:
+        out.textContent = 'site';
+    }
 }
 
 document.querySelector('.b-17').onclick = t17;
@@ -228,7 +264,22 @@ document.querySelector('.b-17').onclick = t17;
 // применяйте switch case
 
 function t18 () {
-   
+    const out = document.querySelector('.out-18');
+    let s18val = document.querySelector('.s-18').value;
+
+    switch (s18val) {
+    case '1':
+        out.textContent = 'admin';
+        break;
+
+    case '2':
+        out.textContent = 'moderator';
+        break;
+
+    case '3':
+        out.textContent = 'user';
+        break; 
+    }
 }
 
 document.querySelector('.b-18').onclick = t18;
@@ -238,7 +289,7 @@ document.querySelector('.b-18').onclick = t18;
 
 
 function t19() {
-
+    document.querySelector('.ch-19').checked ? document.querySelector('.out-19').textContent = 1 : document.querySelector('.out-19').textContent = 0;
 }
 
 document.querySelector('.b-19').onclick = t19;
@@ -247,7 +298,10 @@ document.querySelector('.b-19').onclick = t19;
 // Создана функция t20. Функция запускается при изменении состояния .ch-20. Если .ch-20 является выбранным, то в .out-20 выводите value данного input[type="checkbox"]. Если не выбран - выводите нуль.
 
 function t20() {
+    const ch20 = document.querySelector('.ch-20');
+    const out = document.querySelector('.out-20');
 
+    ch20.checked ? out.textContent = ch20.value : out.textContent = 0;
 }
 
 document.querySelector('.ch-20').oninput = t20;
