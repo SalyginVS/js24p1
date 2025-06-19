@@ -18,7 +18,7 @@ document.querySelector('.b-1').onclick = t01;
 // Создана функция t02. Функция запускается при нажатии .b-2. Напишите код внутри функции, который создает с помощью цикла строку, где шаблон _* повторяется число раз указанное в .i-2. Функция выводит в .out-2 созданную строку.
 function t02() {
     let out = '';
-    let i2val = document.querySelector('.i-2').value;
+    let i2val = +document.querySelector('.i-2').value;
     for (let i = 1; i <= i2val; i++) {
         out += "_*";
     }
@@ -34,7 +34,7 @@ document.querySelector('.b-2').onclick = t02;
 
 function t03() {
     let out = '';
-    let i3val = document.querySelector('.i-3').value;
+    let i3val = +document.querySelector('.i-3').value;
     for (let i = 0; i <= i3val; i++) {
         out += i + "_";
     }
@@ -50,7 +50,7 @@ document.querySelector('.b-3').onclick = t03;
 
 function t04() {
     let out = '';
-    let i4val = document.querySelector('.i-4').value;
+    let i4val = +document.querySelector('.i-4').value;
     for (i4val; i4val >= 0; i4val -= 1) {
         out += i4val + "_";
     }
@@ -89,7 +89,7 @@ document.querySelector('.b-5').onclick = t05;
 function t06() {
     let out = '';
     let i6val = +document.querySelector('.i-6').value;
-    for (let i = 0; i6val; i = i + 3) {
+    for (let i = 0; i6val; i += 3) {
         out += i + "_";
         if (i >= i6val) break;
     }
@@ -216,7 +216,10 @@ document.querySelector('.b-13').onclick = t13;
 
 
 function t14() {
-
+    const p14 = document.querySelectorAll('.p-14');
+    for (let i = 0; i < p14.length; i++) {
+        p14[i].style.backgroundColor = 'lightsalmon';
+    }
 }
 
 document.querySelector('.b-14').onclick = t14;
@@ -225,8 +228,12 @@ document.querySelector('.b-14').onclick = t14;
 // Тask 15
 // Создана функция t15. Функция запускается при нажатии .b-15. Напишите код внутри функции, который получает все div.d-15 в NodeList и четным элементам NodeList присваивает свойство background равное 'paleturquoise'.
 
-function t15() {
 
+function t15() {
+    const d15 = document.querySelectorAll('div.d-15');
+    for (let i = 0; i < d15.length; i++) {
+        if (i % 2 === 0) d15[i].style.backgroundColor = 'paleturquoise';
+    }
 }
 
 document.querySelector('.b-15').onclick = t15;
@@ -239,7 +246,11 @@ document.querySelector('.b-15').onclick = t15;
 const spans16 = document.getElementsByClassName('sp-16');
 
 function t16() {
-
+    let out = 0;
+    for (let i = 0; i < spans16.length; i++) {
+        out += +spans16[i].textContent;
+    }
+    document.querySelector('.out-16').textContent = out;
 }
 
 document.querySelector('.b-16').onclick = t16;
@@ -256,7 +267,6 @@ function t17() {
             break;
         }
     }
-
 }
 
 document.querySelector('.b-17').onclick = t17;
@@ -264,9 +274,17 @@ document.querySelector('.b-17').onclick = t17;
 
 // Task 18
 // Напишите в функции t18 код, который выводит в .out-18 значение value выбранного radiobutton r-18.
+const r18 = document.getElementsByName('r-18');
 
 function t18() {
-
+    let out = '';
+    for (let i = 0; i < r18.length; i++) {
+        if (r18[i].checked) {
+            out = r18[i].value;
+            break;
+        }
+    }
+    document.querySelector('.out-18').textContent = out;
 }
 
 document.querySelector('.b-18').onclick = t18;
@@ -288,7 +306,12 @@ document.querySelector('.b-19').onclick = t19;
 // value равен 300, то в .out-20 вывести строку 'user'
 
 function t20() {
+    let out = '';
 
+    if (+document.querySelector('[name="r-20"]:checked').value === 100) { out = 'admin'; }
+    else if (+document.querySelector('[name="r-20"]:checked').value === 200) { out = 'moderator'; }
+    else if (+document.querySelector('[name="r-20"]:checked').value === 300) { out = 'user'; }
+    document.querySelector('.out-20').textContent = out;
 }
 
 document.querySelector('.b-20').onclick = t20;
