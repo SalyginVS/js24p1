@@ -56,8 +56,7 @@ document.querySelector('.b-4').onclick = t04;
 // Создана функция t05. Функция запускается при нажатии .b-5. Напишите код внутри функции, который читает ЧИСЛО из input.i-5 в переменную, например num. Дальше напишите условие вида if (num) то выводим в .out-5 число 1, в противном случае число 0. Попробуйте запустить ваш код подставляя в input разные числа. Попробуйте отрицательные числа и обязательно нуль.
 
 function t05 () {
-    let num = document.querySelector('.i-5').value;
-
+    let num = +document.querySelector('.i-5').value;
     if (num) document.querySelector('.out-5').textContent = 1;
     else document.querySelector('.out-5').textContent = 0;
 }
