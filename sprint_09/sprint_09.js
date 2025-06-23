@@ -2,8 +2,14 @@
 // Создана функция t01. Функция запускается при нажатии .b-1. Напишите код внутри функции, который создает c помощью цикла while строку, где шаблон '_*' повторяется 10 раз. Функция выводит в .out-1 созданную строку. Обращаю внимание - функция должна гарантировать один и тот же результат в не зависимости от количества запусков. Данное требование справедливо для всех функций далее.
 // т.е. результат _*_*_*_*_*_*_*_*_*_*
 
-function t01 () {
-
+function t01() {
+    let out = '';
+    let i = 0;
+    while (i < 10) {
+        out += '_*';
+        i++;
+    }
+    document.querySelector('.out-1').textContent = out;
 }
 
 document.querySelector('.b-1').onclick = t01;
@@ -11,8 +17,15 @@ document.querySelector('.b-1').onclick = t01;
 
 // Task 2
 // Создана функция t02. Функция запускается при нажатии .b-2. Напишите код внутри функции, который создает c помощью цикла while строку, где шаблон '_*' повторяется число раз указанное в .input-2. Функция выводит в .out-2 созданную строку.
-function t02 () {
-
+function t02() {
+    let out = '';
+    let inputVal = +document.querySelector('.i-2').value;
+    let i = 0;
+    while (i < inputVal) {
+        out += '_*';
+        i++;
+    }
+    document.querySelector('.out-2').textContent = out;
 }
 
 document.querySelector('.b-2').onclick = t02;
@@ -21,8 +34,15 @@ document.querySelector('.b-2').onclick = t02;
 // Создана функция t03. Функция запускается при нажатии .b-3. Напишите код внутри функции, который получает число из input и с помощью цикла while создает строку от 0 до указанного числа с разделителем - подчеркивание. Выводит созданную строку в .out-3.
 // Введено число 5, получаем строку 0_1_2_3_4_5_
 
-function t03 () {
- 
+function t03() {
+    let out = '';
+    let inputVal = +document.querySelector('.i-3').value;
+    let i = 0;
+    while (i <= inputVal) {
+        out += `${i}_`;
+        i++;
+    }
+    document.querySelector('.out-3').textContent = out;
 }
 
 document.querySelector('.b-3').onclick = t03;
@@ -32,8 +52,15 @@ document.querySelector('.b-3').onclick = t03;
 // Создана функция t04. Функция запускается при нажатии .b-4. Напишите код внутри функции, который получает число из input и с помощью цикла while создает строку от полученного числа до нуля, с разделителем - подчеркивание. Выводит созданную строку в .out-4.
 // Введено число 5, получаем строку 5_4_3_2_1_0_
 
-function t04 () {
-   
+function t04() {
+    let out = '';
+    let inputVal = +document.querySelector('.i-4').value;
+    let i = 1;
+    while (inputVal >= 0) {
+        out += `${inputVal}_`;
+        inputVal--;
+    }
+    document.querySelector('.out-4').textContent = out;
 }
 
 document.querySelector('.b-4').onclick = t04;
@@ -46,7 +73,15 @@ document.querySelector('.b-4').onclick = t04;
 // При проверке в input будут вводиться только четные числа.
 // Строка выводится в .out-5. Для решения используйте цикл while.
 
-function t05 () {
+function t05() {
+    let out = '';
+    let inputVal = +document.querySelector('.i-5').value;
+    let i = 0;
+    while (i <= inputVal) {
+        out += `${i}_`;
+        i += 2;
+    }
+    document.querySelector('.out-5').textContent = out;
 }
 
 document.querySelector('.b-5').onclick = t05;
@@ -55,8 +90,14 @@ document.querySelector('.b-5').onclick = t05;
 // Task 6
 // Создана функция t06. Функция запускается при нажатии .b-6. Напишите код внутри функции. Код должен выводить в .out-6 количество чисел, которые делятся на 7 с остатком нуль, в диапазоне от 0 (включительно) до 100 (включительно). Решите задачу циклом while.
 
-function t06 () {
-    
+function t06() {
+    let out = 0;
+    let i = 0;
+    while (i <= 100) {
+        if (i % 7 === 0) out++;
+        i++;
+    }
+    document.querySelector('.out-6').textContent = out;
 }
 
 document.querySelector('.b-6').onclick = t06;
@@ -66,8 +107,14 @@ document.querySelector('.b-6').onclick = t06;
 // Создана функция t07. Функция запускается при нажатии .b-7. Напишите код внутри функции. Код содержит цикл while от 10 (включительно) до 99 (включительно) и создает строку, куда выводит числа в которых сумма цифр десятков и единиц равна 8. Разделитель подчеркивание.
 // т.е. выводятся 17_26_ и далее
 
-function t07 () {
-    
+function t07() {
+    let out = '';
+    let i = 10;
+    while (i <= 99) {
+        if (Math.trunc(i / 10) + (i % 10) === 8) out += `${i}_`;
+        i++;
+    }
+    document.querySelector('.out-7').textContent = out;
 }
 
 document.querySelector('.b-7').onclick = t07;
@@ -77,8 +124,15 @@ document.querySelector('.b-7').onclick = t07;
 // Создана функция t08. Функция запускается при нажатии .b-8. Функция получает число из input.i-8 и создает строку вида 0_**_1_**_ до введенного числа включительно. Строку выводит в .out-8.
 // Например ввели 3, получаем строку 0_**_1_**_2_**_3_**_
 
-function t08 () {
-    
+function t08() {
+    let out = '';
+    let inputVal = +document.querySelector('.i-8').value;
+    let i = 0;
+    while (i <= inputVal) {
+        out += `${i}_**_`;
+        i++;
+    }
+    document.querySelector('.out-8').textContent = out;
 }
 
 document.querySelector('.b-8').onclick = t08;
@@ -88,8 +142,15 @@ document.querySelector('.b-8').onclick = t08;
 // Например ввели число 3. Необходимо сформировать строку '******<br>******<br>******<br>'
 
 
-function t09 () {
-    
+function t09() {
+    let out = '';
+    let inputVal = +document.querySelector('.i-9').value;
+    let i = 0;
+    while (i < inputVal) {
+        out += '******<br>';
+        i++;
+    }
+    document.querySelector('.out-9').innerHTML = out;
 }
 
 document.querySelector('.b-9').onclick = t09;
@@ -99,9 +160,17 @@ document.querySelector('.b-9').onclick = t09;
 // Создана функция t10. Функция запускается при нажатии .b-10. Напишите код внутри функции. Код получает число из input.i-10 и создает строку от 0 до введенного числа включительно, где разделитель после четных чисел знак =, а после не четных знак минус. Строка выводится в .out-10. Применяйте цикл while.
 // Например введено число 5, необходимо сформировать строку '0=1-2=3-4=5-'
 
-function t10 () {
-    
-    
+function t10() {
+    let out = '';
+    let inputVal = +document.querySelector('.i-10').value;
+    let i = 0;
+    while (i <= inputVal) {
+        if (i % 2 === 0) out += `${i}=`;
+        else out += `${i}-`;
+        i++;
+    }
+    document.querySelector('.out-10').textContent = out;
+
 }
 
 document.querySelector('.b-10').onclick = t10;
@@ -110,8 +179,14 @@ document.querySelector('.b-10').onclick = t10;
 // Task 11
 // Создана функция t11. Функция запускается при нажатии .b-11. Напишите код, который формирует строку вида 11_21_ до 91_ включительно, с помощью цикла do while. Выведите строку в .out-11.
 
-function t11 () {
-    
+function t11() {
+    let out = '';
+    let i = 11;
+    while (i <= 91) {
+        out += `${i}_`;
+        i += 10;
+    }
+    document.querySelector('.out-11').textContent = out;
 }
 
 document.querySelector('.b-11').onclick = t11;
@@ -120,9 +195,15 @@ document.querySelector('.b-11').onclick = t11;
 // Task 12
 // Создана функция t12. Функция запускается при нажатии .b-12. Напишите код внутри функции, который формирует строку с 77_74_71_ до 35_. Т.е. от 77 до 35 с шагом 3. Разделитель - подчеркивание. Решите задачу с помощью do while. Строку выведите в .out-12.
 
-function t12 () {
-   
-    
+function t12() {
+    let out = '';
+    let i = 77;
+    while (i >= 35) {
+        out += `${i}_`;
+        i -= 3;
+    }
+    document.querySelector('.out-12').textContent = out;
+
 }
 
 document.querySelector('.b-12').onclick = t12;
@@ -133,7 +214,15 @@ document.querySelector('.b-12').onclick = t12;
 // Например выбран разделитель =, получим строку 0=1=2=3=4=5=6=7=8=9=10=
 
 
-function t13 () {
+function t13() {
+    let separ = document.querySelector('.s-13').value;
+    let out = '';
+    let i = 0;
+    while (i <= 10) {
+        out += `${i}${separ}`;
+        i++;
+    }
+    document.querySelector('.out-13').textContent = out;
 }
 
 document.querySelector('.b-13').onclick = t13;
@@ -143,8 +232,15 @@ document.querySelector('.b-13').onclick = t13;
 // Создана функция t14. Функция запускается при изменении input.range-14, код в функции должен получать value из input и создавать строку от 0 до полученного числа, шаг 1 и разделитель пробел. Строка должна выводиться в .out-14. Применяйте цикл do while.
 
 
-function t14 () {
-   
+function t14() {
+    let out = '';
+    let inputVal = +document.querySelector('.range-14').value;
+    let i = 0;
+    while (i <= inputVal) {
+        out += `${i} `;
+        i++;
+    }
+    document.querySelector('.out-14').textContent = out;
 }
 
 document.querySelector('.range-14').oninput = t14;
@@ -164,8 +260,8 @@ document.querySelector('.b-15').onclick = t15;
 // Создана функция t16. Функция запускается при нажатии .b-16. Напишите код внутри функции, который записывает в каждый div.d-16 число (очищая предыдущее содержимое). Применяйте цикл do while. Т.е. в первом div.d-16 выведите  число 1, во второй - число 2 и т.д.
 
 
-function t16 () {
-   
+function t16() {
+
 }
 
 document.querySelector('.b-16').onclick = t16;
@@ -178,7 +274,7 @@ document.querySelector('.b-16').onclick = t16;
 
 
 
-function t17 () {
+function t17() {
 }
 
 document.querySelector('.b-17').onclick = t17;
@@ -187,8 +283,8 @@ document.querySelector('.b-17').onclick = t17;
 // Task 18
 // Напишите в функции t18 код, который с помощью цикла do while формирует строку 1 10 2 20 3 30 и так далее до 10 100 . Выведите строку в .out-18.
 
-function t18 () {
-   
+function t18() {
+
 }
 
 document.querySelector('.b-18').onclick = t18;
@@ -198,7 +294,7 @@ document.querySelector('.b-18').onclick = t18;
 
 
 function t19() {
-    
+
 }
 
 document.querySelector('.b-19').onclick = t19;
@@ -210,4 +306,4 @@ function t20() {
 
 }
 
-document.querySelector('.b-20').onclick= t20;
+document.querySelector('.b-20').onclick = t20;
