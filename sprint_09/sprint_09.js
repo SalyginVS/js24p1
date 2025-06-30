@@ -182,10 +182,10 @@ document.querySelector('.b-10').onclick = t10;
 function t11() {
     let out = '';
     let i = 11;
-    while (i <= 91) {
+    do {
         out += `${i}_`;
         i += 10;
-    }
+    } while (i <= 91)
     document.querySelector('.out-11').textContent = out;
 }
 
@@ -198,10 +198,10 @@ document.querySelector('.b-11').onclick = t11;
 function t12() {
     let out = '';
     let i = 77;
-    while (i >= 35) {
+    do {
         out += `${i}_`;
         i -= 3;
-    }
+    } while (i >= 35)
     document.querySelector('.out-12').textContent = out;
 
 }
@@ -218,10 +218,10 @@ function t13() {
     let separ = document.querySelector('.s-13').value;
     let out = '';
     let i = 0;
-    while (i <= 10) {
+    do {
         out += `${i}${separ}`;
         i++;
-    }
+    } while (i <= 10)
     document.querySelector('.out-13').textContent = out;
 }
 
@@ -236,10 +236,10 @@ function t14() {
     let out = '';
     let inputVal = +document.querySelector('.range-14').value;
     let i = 0;
-    while (i <= inputVal) {
+    do {
         out += `${i} `;
         i++;
-    }
+    } while (i <= inputVal)
     document.querySelector('.out-14').textContent = out;
 }
 
@@ -250,7 +250,14 @@ document.querySelector('.range-14').oninput = t14;
 // Создана функция t15. Функция запускается при нажатии .b-15. Напишите код внутри функции, который записывает в каждый div.d-15 число 0 (очищая предыдущее содержимое). Применяйте цикл do while.
 
 function t15() {
+    let nList = document.querySelectorAll('.out>.d-15');
 
+    let i = 0;
+    do {
+
+        nList[i].textContent = 0;
+        i++
+    } while (i < nList.length)
 }
 
 document.querySelector('.b-15').onclick = t15;
@@ -261,7 +268,13 @@ document.querySelector('.b-15').onclick = t15;
 
 
 function t16() {
+    let nList = document.querySelectorAll('.out>.d-16');
+    let i = 0;
+    do {
 
+        nList[i].textContent = i + 1;
+        i++
+    } while (i < nList.length)
 }
 
 document.querySelector('.b-16').onclick = t16;
@@ -275,6 +288,14 @@ document.querySelector('.b-16').onclick = t16;
 
 
 function t17() {
+    let nList = document.querySelectorAll('.out>.d-17');
+    let i = 0;
+    do {
+        iContent = nList[i].textContent;
+
+        nList[i].textContent = `${i + 1}. ${iContent}`;
+        i++
+    } while (i < nList.length)
 }
 
 document.querySelector('.b-17').onclick = t17;
@@ -284,7 +305,13 @@ document.querySelector('.b-17').onclick = t17;
 // Напишите в функции t18 код, который с помощью цикла do while формирует строку 1 10 2 20 3 30 и так далее до 10 100 . Выведите строку в .out-18.
 
 function t18() {
-
+    let out = '';
+    i = 1;
+    do {
+        out += `${i} ${i * 10} `;
+        i++
+    } while (i <= 10)
+    document.querySelector('.out-18').textContent = out;
 }
 
 document.querySelector('.b-18').onclick = t18;
@@ -294,6 +321,15 @@ document.querySelector('.b-18').onclick = t18;
 
 
 function t19() {
+    let out = '';
+    i = 0;
+    k = 10;
+    do {
+        out += `${i} ${k} `;
+        i++;
+        k--;
+    } while (i <= 10)
+    document.querySelector('.out-19').textContent = out;
 
 }
 
@@ -303,7 +339,14 @@ document.querySelector('.b-19').onclick = t19;
 // Получите все td с классом .price, c помощью querySelectorAll(). В функции посчитайте сумму товаров в данных ячейках и выведите в ячейку .total. Примените цикл do while.
 
 function t20() {
-
+    let nList = document.querySelectorAll('td.price');
+    let out = 0;
+    let i = 0;
+    do {
+        out += +nList[i].textContent;
+        i++
+    } while (i < nList.length)
+    document.querySelector('.total').textContent = out;
 }
 
 document.querySelector('.b-20').onclick = t20;
