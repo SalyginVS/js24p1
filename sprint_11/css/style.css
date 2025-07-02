@@ -4,7 +4,12 @@ body {
     font-optical-sizing: auto;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: "Jura", sans-serif;
     font-optical-sizing: auto;
 }
@@ -27,10 +32,11 @@ h4 {
 }
 
 h1.site-title {
-    font-size:  1.5rem;
+    font-size: 1.5rem;
 }
+
 h2.site-title {
-    font-size:  1.3rem;
+    font-size: 1.3rem;
 }
 
 section h3 {
@@ -65,7 +71,15 @@ pre {
 
 
 
-pre, blockquote, dl, figure, table, p, ul, ol, form {
+pre,
+blockquote,
+dl,
+figure,
+table,
+p,
+ul,
+ol,
+form {
     margin-bottom: 1.5rem;
 }
 
@@ -77,10 +91,10 @@ pre, blockquote, dl, figure, table, p, ul, ol, form {
 }
 
 div.section {
-	border-top : 1px solid #c0c0c0;
-	border-bottom : 1px solid #c0c0c0;
-	margin: 20px 0;
-	padding: 20px 0;
+    border-top: 1px solid #c0c0c0;
+    border-bottom: 1px solid #c0c0c0;
+    margin: 20px 0;
+    padding: 20px 0;
 }
 
 textarea {
@@ -116,6 +130,6 @@ textarea {
 
 .clip {
     overflow: hidden;
-white-space: nowrap;
-	text-overflow: ellipsis;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
