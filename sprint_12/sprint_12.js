@@ -2,7 +2,7 @@
 // В начальных спринтах мы создавали элементы с помощью innerHTML. Давайте вспомним как это было. Создайте заголовок второго уровня с текстом 'Sprint 12'. Поместите элемент в .out-1 с помощью innerHTML.
 
 function t01() {
-    document.querySelector('.out-1').innerHTML = '<h1>Sprint 12</h1>';
+    document.querySelector('.out-1').innerHTML = '<h2>Sprint 12</h2>';
 }
 
 document.querySelector('.b-1').onclick = t01;
@@ -12,6 +12,7 @@ document.querySelector('.b-1').onclick = t01;
 
 function t02() {
     const h2 = document.createElement('h2');
+
     h2.textContent = 'Sprint 12'
     document.querySelector('.out-2').append(h2);
 }
@@ -24,6 +25,7 @@ document.querySelector('.b-2').onclick = t02;
 
 function t03() {
     const img = document.createElement('img');
+
     img.src = './images/harconen.png';
     document.querySelector('.out-3').append(img);
 }
@@ -37,6 +39,7 @@ document.querySelector('.b-3').onclick = t03;
 
 function t04() {
     const img = document.createElement('img');
+
     img.src = './images/harconen2.png';
     img.classList.add('round-img');
     document.querySelector('.out-4').append(img);
@@ -51,6 +54,7 @@ document.querySelector('.b-4').onclick = t04;
 
 function t05() {
     const input = document.createElement('input');
+    
     input.type = 'number';
     input.value = '0';
     input.classList.add('i-5');
@@ -113,7 +117,14 @@ document.querySelector('.b-8').onclick = t08;
 // Функция должна создавать элемент 'details' через createElement, создайте через createElement элемент 'summary' с текстом 'close/open'. Добавьте через append созданный summary в details. Создайте текстовую ноду через createTextNode(), с текстом 'Dune is a 1965 epic science fiction novel by American author Frank Herbert, originally published as two separate serials in Analog magazine.' Добавьте созданную ноду в details через append. Созданный details в .out-9 через append.
 
 function t09() {
+    const details = document.createElement('details');
+    const summary = document.createElement('summary');
+    const textNode = document.createTextNode('Dune is a 1965 epic science fiction novel by American author Frank Herbert, originally published as two separate serials in Analog magazine.');
 
+    summary.innerText = 'close/open';
+    details.append(summary);
+    details.append(textNode);
+    document.querySelector('.out-9').append(details);
 }
 
 
@@ -123,7 +134,15 @@ document.querySelector('.b-9').onclick = t09;
 // Функция должна создавать элемент 'tr' и два элемента 'td'. В первый добавьте текст 'Гхола', а во второй 'Гхола — клон, искусственное существо, которое выращивается в аксолотль-чане', добавьте оба td в tr через append. Созданный tr добавьте в таблицу .table-10 > tbody через append(). 
 
 function t10() {
+    const tr = document.createElement('tr');
+    const td1 = document.createElement('td');
+    const td2 = document.createElement('td');
 
+    td1.innerText = 'Гхола';
+    td2.innerText = 'Гхола — клон, искусственное существо, которое выращивается в аксолотль-чане';
+    tr.append(td1);
+    tr.append(td2);
+    document.querySelector('.table-10 > tbody').append(tr);
 }
 
 document.querySelector('.b-10').onclick = t10;
@@ -136,6 +155,7 @@ div.textContent = 'Test div';
 div.classList.add('bg-orange');
 
 function t11() {
+    document.querySelector('.out-11').append(div);
 }
 
 document.querySelector('.b-11').onclick = t11;
@@ -145,6 +165,7 @@ document.querySelector('.b-11').onclick = t11;
 // Функция должна добавлять элемент div (созданный в таске 11) с помощью prepend в .out-11. Обратите внимание, куда добавляется элемент. 
 
 function t12() {
+    document.querySelector('.out-11').prepend(div);
 }
 
 document.querySelector('.b-12').onclick = t12;
@@ -154,6 +175,7 @@ document.querySelector('.b-12').onclick = t12;
 // Функция должна добавлять элемент div (созданный в таске 11) с помощью before в .out-11. Обратите внимание, куда добавляется элемент. 
 
 function t13() {
+    document.querySelector('.out-11').before(div);
 }
 
 document.querySelector('.b-13').onclick = t13;
@@ -163,6 +185,7 @@ document.querySelector('.b-13').onclick = t13;
 // Функция должна добавлять элемент div (созданный в таске 11) с помощью after в .out-11. Обратите внимание, куда добавляется элемент. 
 
 function t14() {
+    document.querySelector('.out-11').after(div);
 }
 
 document.querySelector('.b-14').onclick = t14;
@@ -172,6 +195,7 @@ document.querySelector('.b-14').onclick = t14;
 // Функция должна делать replaceWith для .out-15 заменяя его на div (созданный в таск 11). Обратите внимание, куда добавляется элемент. 
 
 function t15() {
+    document.querySelector('.out-15').replaceWith(div);
 }
 
 document.querySelector('.b-15').onclick = t15;
@@ -181,7 +205,7 @@ document.querySelector('.b-15').onclick = t15;
 // Функция должна делать remove() для элемента .out-16.
 
 function t16() {
-
+    document.querySelector('.out-16').remove();
 }
 
 document.querySelector('.b-16').onclick = t16;
@@ -191,7 +215,7 @@ document.querySelector('.b-16').onclick = t16;
 // Как видно createElement очень гибок, а вместе с after, before, append, prepend позволяет очень гибко работать с DOM, однако не стоит списывать innerHTML со счетов. Давайте заменим блок .out-17 строкой '<mark class="m-17">Thufir Hawat</mark>' с помощью outerHTML.
 
 function t17() {
-
+    document.querySelector('.out-17').outerHTML = '<mark class="m-17">Thufir Hawat</mark>';
 }
 
 document.querySelector('.b-17').onclick = t17;
@@ -200,7 +224,7 @@ document.querySelector('.b-17').onclick = t17;
 // Функция t18 должна заменять блок .out-18 строкой '<mark class="m-18">Thufir Hawat</mark>' с помощью outerText.
 
 function t18() {
-
+    document.querySelector('.out-18').outerText = '<mark class="m-18">Thufir Hawat</mark>';
 }
 
 document.querySelector('.b-18').onclick = t18;
