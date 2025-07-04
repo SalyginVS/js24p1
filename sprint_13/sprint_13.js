@@ -40,9 +40,9 @@ document.querySelector('.b-4').onclick = function () {
 // Тask 5
 // Напишите анонимную функцию, которая запускается после объявления. Функция выводит в .out-5 строку 'work'.
 
-// (function () {
-//     document.querySelector('.out-5').textContent = 'work';
-// })();
+(function () {
+    document.querySelector('.out-5').textContent = 'work';
+})();
 
 
 // Task 6
@@ -86,7 +86,7 @@ document.querySelector('.b-82').onclick = function () {
 
 // тут напишите функцию t09
 function t09(a, b) {
-    let out = document.querySelector('.out-9');
+    const out = document.querySelector('.out-9');
 
     a > b ? out.textContent = a : out.textContent = b;
 }
@@ -197,7 +197,7 @@ document.querySelector('.b-15').onclick = function () {
 // тут напишите функцию t16
 function t16(user) {
     const a = document.createElement('a');
-    
+
     a.href = '/logout';
     a.textContent = user;
     a.classList.add('button', 'button-primary');
@@ -242,18 +242,18 @@ document.querySelector('.b-18').onclick = function () {
 
 // напишите функцию t19
 function t19(num1, num2, sing) {
-  switch (sing) {
-    case "+":
-      return num1 + num2;
-    case "-":
-      return num1 - num2;
-    case "/":
-      return num1 / num2;
-    case "*":
-      return num1 * num2;
-    default:
-      break;
-  }
+    switch (sing) {
+        case "+":
+            return num1 + num2;
+        case "-":
+            return num1 - num2;
+        case "/":
+            return num1 / num2;
+        case "*":
+            return num1 * num2;
+        default:
+            break;
+    }
 }
 
 document.querySelector('.b-19').addEventListener('click', function () {
@@ -264,7 +264,7 @@ document.querySelector('.b-19').addEventListener('click', function () {
 // Напишите функцию t20, которая принимает аргумент и если аргумент число, то возвращает строку 'int', если аргумент строка, то возвращает 'string', если аргумент boolean, то функция возвращает 'bool'.
 
 // напишите функцию t20
-function t20 (arg) {
+function t20(arg) {
     if (typeof arg === "number") return 'int';
     else if (typeof arg === "string") return 'string';
     else if (typeof arg === "boolean") return 'bool';
