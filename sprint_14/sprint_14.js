@@ -84,7 +84,7 @@ document.querySelector('.b-7').onclick = () => document.querySelector('.out-7').
 // Task 8
 // Перепишите функцию t08 как стрелочную.
 
-const t08 = (url) => {
+const t08 = url => {
     const img = document.createElement('img');
     img.src = url;
     return img;
@@ -130,6 +130,7 @@ document.querySelector('.b-10').onclick = () => t10('.p-10');
 // Напишите стрелочную функцию t11, которая получает value из input.i-11 и возвращает true если число в input больше нуля и false если равно или меньше.
 
 // тут напишите функцию t11
+const t11 = () => +document.querySelector('input.i-11').value > 0;
 
 document.querySelector('.b-11').onclick = () => document.querySelector('.out-11').textContent = t11();
 
@@ -144,6 +145,12 @@ document.querySelector('.b-11').onclick = () => document.querySelector('.out-11'
 
 
 // тут напишите функцию t12
+const t12 = t => {
+    if (t >= 0 && t <= 20) return 'cold';
+    else if (t >= 21 && t <= 35) return 'normal';
+    else if (t >= 36 && t <= 50) return 'hot';
+    else if (t >= 51 && t <= 100) return 'very hot';
+}
 
 document.querySelector('.range-12').oninput = () => {
     const t = +document.querySelector('.range-12').value;
@@ -155,6 +162,7 @@ document.querySelector('.range-12').oninput = () => {
 // Напишите стрелочную функцию t13, которая получает аргумент - строку и возвращает строку очищенную от пробелов.
 
 // тут напишите функцию t13
+const t13 = str => str.trim();
 
 document.querySelector('.b-13').onclick = () => {
     let str = '  Stormbringer    ';
@@ -166,6 +174,7 @@ document.querySelector('.b-13').onclick = () => {
 // Напишите стрелочную функцию t14, которая получает аргумент - число и возвращает true если число четное и false в противном случае.
 
 // тут напишите функцию t14
+const t14 = n => n % 2 === 0;
 
 document.querySelector('.b-14').onclick = () => {
     const n = +document.querySelector('.i-14').value;
@@ -177,6 +186,7 @@ document.querySelector('.b-14').onclick = () => {
 // Напишите стрелочную функцию t15, которая получает аргумент - имя класса и проверяет есть ли такой элемент на странице. Возвращает true если есть и false если нет.
 
 // тут напишите функцию t15
+const t15 = cl => document.querySelector(cl) !== null;
 
 document.querySelector('.b-15').onclick = () => {
     document.querySelector('.out-15').textContent = t15('.out-155555555');
@@ -187,6 +197,7 @@ document.querySelector('.b-15').onclick = () => {
 // Напишите стрелочную функцию t16, которая получает аргумент - строку и возвращает true, если строка содержит символ '@'  и false если не содержит.
 
 // тут напишите функцию t16
+const t16 = str => str.includes('@');
 
 document.querySelector('.b-16').onclick = () => {
     document.querySelector('.out-16').textContent = t16('example@mail.ua');
@@ -198,6 +209,7 @@ document.querySelector('.b-16').onclick = () => {
 
 
 // тут пишите стрелочную функцию t17
+const t17 = () => 10;
 
 document.querySelector('.b-17').onclick = () => {
     document.querySelector('.out-17').textContent = (t17() + 5 === 15);
@@ -209,9 +221,10 @@ document.querySelector('.b-17').onclick = () => {
 
 
 // тут пишите стрелочную функцию t18
+const t18 = () => 2;
 
 document.querySelector('.b-18').onclick = () => {
-    document.querySelector('.out-18').textContent = ((100 - 10 * t18()) / t18 ()) === 40;
+    document.querySelector('.out-18').textContent = ((100 - 10 * t18()) / t18()) === 40;
 }
 
 
@@ -220,6 +233,7 @@ document.querySelector('.b-18').onclick = () => {
 // Напишите стрелочную функцию t19, которая возвращает булево значение, такое, чтобы выражение ниже давало true.
 
 // тут пишите стрелочную функцию t19
+const t19 = () => false;
 
 document.querySelector('.b-19').onclick = () => {
     document.querySelector('.out-19').textContent = !t19();
@@ -230,6 +244,7 @@ document.querySelector('.b-19').onclick = () => {
 // Напишите стрелочную функцию t20, которая возвращает булево значение, такое, чтобы выражение ниже давало true.
 
 // тут пишите стрелочную функцию t20
+const t20 = () => true;
 
 document.querySelector('.b-20').onclick = () => {
     document.querySelector('.out-20').textContent = (true !== !t20());
