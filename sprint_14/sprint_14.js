@@ -1,7 +1,13 @@
 // Task 1
 // Перепишите функцию t01 как стрелочную.
 
-function t01() {
+// function t01() {
+//     const a = 88;
+//     const b = 99;
+//     document.querySelector('.out-1').textContent = a * b;
+// }
+
+const t01 = () => {
     const a = 88;
     const b = 99;
     document.querySelector('.out-1').textContent = a * b;
@@ -12,7 +18,11 @@ document.querySelector('.b-1').onclick = t01;
 // Task 2
 // Перепишите функцию t02 как стрелочную.
 
-function t02(a, b) {
+// function t02(a, b) {
+//     document.querySelector('.out-2').textContent = a * b;
+// }
+
+const t02 = (a, b) => {
     document.querySelector('.out-2').textContent = a * b;
 }
 
@@ -21,7 +31,13 @@ document.querySelector('.b-2').onclick = () => t02(10, 22);
 // Task 3
 // Перепишите функцию t03 как стрелочную.
 
-function t03(a, b) {
+// function t03(a, b) {
+//     let c = a.toLowerCase();
+//     let d = b.toLowerCase();
+//     return (c > d) ? c : d;
+// }
+
+const t03 = (a, b) => {
     let c = a.toLowerCase();
     let d = b.toLowerCase();
     return (c > d) ? c : d;
@@ -33,7 +49,7 @@ document.querySelector('.b-3').onclick = () => document.querySelector('.out-3').
 // Task 4
 // Перепишите функцию t04 как стрелочную.
 
-function t04(min, max) {
+const t04 = (min, max) => {
     let rand = min + Math.random() * (max + 1 - min);
     return Math.floor(rand);
 }
@@ -44,9 +60,7 @@ document.querySelector('.b-4').onclick = () => document.querySelector('.out-4').
 // Task 5
 // Перепишите функцию t05 как стрелочную.
 
-function t05(str) {
-    return str[0].toUpperCase() + str.toLowerCase().slice(1);
-}
+const t05 = str => str[0].toUpperCase() + str.toLowerCase().slice(1);
 
 document.querySelector('.b-5').onclick = () => document.querySelector('.out-5').textContent = t05('hErAlD');
 
@@ -54,9 +68,7 @@ document.querySelector('.b-5').onclick = () => document.querySelector('.out-5').
 // Task 6
 // Перепишите функцию t06 как стрелочную.
 
-function t06(str) {
-    return str === str.toLowerCase();
-}
+const t06 = str => str === str.toLowerCase();
 
 document.querySelector('.b-6').onclick = () => document.querySelector('.out-6').textContent = t06('Elric');
 
@@ -64,9 +76,7 @@ document.querySelector('.b-6').onclick = () => document.querySelector('.out-6').
 // Task 7
 // Перепишите функцию t07 как стрелочную.
 
-function t07(password, length) {
-    return password.length >= length;
-}
+const t07 = (password, length) => password.length >= length;
 
 document.querySelector('.b-7').onclick = () => document.querySelector('.out-7').textContent = t07('While the Gods Laugh', 9);
 
@@ -74,7 +84,7 @@ document.querySelector('.b-7').onclick = () => document.querySelector('.out-7').
 // Task 8
 // Перепишите функцию t08 как стрелочную.
 
-function t08(url) {
+const t08 = (url) => {
     const img = document.createElement('img');
     img.src = url;
     return img;
@@ -89,7 +99,7 @@ document.querySelector('.b-8').onclick = () => {
 // Task 9
 // Перепишите функцию t09 как стрелочную.
 
-function t09(list) {
+const t09 = list => {
     const ul = document.querySelector(list);
     const liElements = ul.querySelectorAll('li');
     for (let i = 0; i < liElements.length; i++) {
@@ -103,7 +113,7 @@ document.querySelector('.b-9').onclick = () => t09('.list-9');
 // Task 10
 // Перепишите функцию t10 как стрелочную.
 
-function t10(f) {
+const t10 = f => {
     const p = document.querySelector(f);
     const spans = p.querySelectorAll('span');
     for (let i = 0; i < spans.length; i++) {
