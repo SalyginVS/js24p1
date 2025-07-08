@@ -35,7 +35,7 @@ function multi(a, b) {
 // b2.addEventListener('dblclick', t01);
 // click = mousedown + mouseup
 // b2.addEventListener('mousedown', t01);
-// b2.addEventListener('mouseup', t01);
+// b2.addEventListener();
 // b2.addEventListener('mouseover', t01);
 // b2.addEventListener('mouseout', t01);
 // b2.addEventListener('mousemove', t01);
