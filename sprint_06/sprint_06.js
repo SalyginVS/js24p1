@@ -304,3 +304,35 @@ function t20() {
 }
 
 document.querySelector('.ch-20').oninput = t20;
+
+
+// Task 21
+// Создана функция t21. Функция автоматически запускается при загрузке страницы и при изменении select.s-21. Функция считывает value из select.s-21 и если:
+// value = 1 выводит в .out-21 строку 'Premium'
+// value = 2 выводит в .out-21 строку 'Standard'
+// value = 3 выводит в .out-21 строку 'Basic'
+
+function t21() {
+    const out = document.querySelector('.out-21');
+    let s21val = document.querySelector('.s-21').value;
+
+    switch (s21val) {
+    case '1':
+        out.textContent = 'Premium';
+        break;
+
+    case '2':
+        out.textContent = 'Standard';
+        break;
+
+    case '3':
+        out.textContent = 'Basic';
+        break;
+    }
+}
+
+// Запуск функции при загрузке страницы
+t21();
+
+// Запуск функции при изменении select
+document.querySelector('.s-21').onchange = t21;
